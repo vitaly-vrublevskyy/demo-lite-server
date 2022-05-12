@@ -28,11 +28,12 @@ function main() {
                 if (get(spineData, 'skeleton.spine') === '3.8.75') {
                     set(spineData, 'skeleton.spine', '3.8.75-beta'); // simple trick - to prevent runtime error.
                 }
-                characters[file] = spineData;
+                const name = file.replace('.json', '');
+                characters[name] = spineData;
             });
 
         const existingCharacters = {...readCharactersData(), ...characters}; // merge new animation with existing
-        fs.writeFileSync(`${directoryPath}/characters.json`, JSON.stringify(existingCharacters, null, 2));
+        fs.writeFileSync(`${directoryPath}/characters.json`, JSON.stringify(existingCharacters));
     });
 }
 

@@ -3,5 +3,6 @@
   "open": false,
   "logLevel": "silent",
   "files": ["./assets/**/*.{atlas,png}", "./assets/**/characters.json"],
-  "server": { "baseDir": "./assets" }
+  "server": { "baseDir": "./assets" },
+  "cors": true
 }
